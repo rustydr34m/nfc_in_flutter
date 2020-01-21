@@ -134,7 +134,7 @@
 // the reader session if activate
 - (FlutterError * _Nullable)onCancelWithArguments:(id _Nullable)arguments {
     if (session != nil) {
-        [session invalidateSession];
+        // [session invalidateSession];
         session = nil;
     }
     events = nil;
