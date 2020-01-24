@@ -133,8 +133,8 @@
 // However if it was not triggered by manuallyStopStream(), it should invalidate
 // the reader session if activate
 - (FlutterError * _Nullable)onCancelWithArguments:(id _Nullable)arguments {
-    if (session != nil) {
-        // [session invalidateSession];
+    if (session != nil && [session isReady]) {
+        [session invalidateSession];
         session = nil;
     }
     events = nil;
